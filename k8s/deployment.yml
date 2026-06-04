@@ -17,9 +17,7 @@ spec:
     spec:
       containers:
         - name: copilot-agent
-          # For local dev use the image built by docker-compose / docker build
-          # On Docker Desktop with local k8s, imagePullPolicy: Never uses the local image
-          image: claude-demo:local
+          image: demo-assessment:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 3000
