@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ["18", "20", "22"]
+        node-version: ["20", "22"]
       fail-fast: false
 
     steps:
@@ -35,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: Run tests with coverage
-        run: npx jest --coverage --passWithNoTests
+        run: npx jest --coverage --coverageDirectory=coverage --passWithNoTests
 
       - name: Upload coverage reports
         uses: actions/upload-artifact@v4
@@ -46,7 +46,7 @@ jobs:
         if: always()
 
       - name: Publish test results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action@c950f6fb443cb5af20a377fd0dfaa78838901040
         if: always()
         with:
           files: |
@@ -78,7 +78,7 @@ jobs:
         run: npm test
 
       - name: Run tests with coverage
-        run: npx jest --coverage --passWithNoTests
+        run: npx jest --coverage --coverageDirectory=coverage --passWithNoTests
 
       - name: Upload coverage reports
         uses: actions/upload-artifact@v4
@@ -112,7 +112,7 @@ jobs:
             -Dsonar.projectKey=copilot-action-demo_demo-assessment
             -Dsonar.organization=copilot-action-demo
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}           
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         continue-on-error: true
         
