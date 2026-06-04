@@ -1,7 +1,7 @@
 services:
   copilot-agent:
     build: .
-    image: demo-assesment:local
+    image: demo-assessment:latest
     container_name: copilot-agent
     ports:
       - "3000:3000"
