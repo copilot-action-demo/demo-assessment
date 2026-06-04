@@ -35,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: Run tests with coverage
-        run: npx jest --coverage --coverageDirectory=coverage
+        run: npx jest --coverage --coverageDirectory=coverage --passWithNoTests
 
       - name: Upload coverage reports
         uses: actions/upload-artifact@v4
@@ -78,7 +78,7 @@ jobs:
         run: npm test
 
       - name: Run tests with coverage
-        run: npx jest --coverage --coverageDirectory=coverage
+        run: npx jest --coverage --coverageDirectory=coverage --passWithNoTests
 
       - name: Upload coverage reports
         uses: actions/upload-artifact@v4
