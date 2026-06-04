@@ -46,7 +46,7 @@ jobs:
         if: always()
 
       - name: Publish test results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action@2.23.0
         if: always()
         with:
           files: |
@@ -112,7 +112,7 @@ jobs:
             -Dsonar.projectKey=copilot-action-demo_demo-assessment
             -Dsonar.organization=copilot-action-demo
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}           
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         continue-on-error: true
         
