@@ -11,7 +11,7 @@ app.get("/", (_req, res) => {
   res.json({
     status: "ok",
     service: "GDCI BANK HRMS Assistant",
-    version: "1.0.0",
+    version: "1.0.1",
     environment: process.env.NODE_ENV || "production",
     port: PORT,
     uptime: process.uptime(),
